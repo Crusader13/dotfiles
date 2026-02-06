@@ -229,7 +229,7 @@ alias kssh="kitty +kitten ssh"
 # Alias gitlab dotfiles
 alias dotfiles='/usr/bin/git --git-dir="$HOME/GitHub/.dotfiles/" --work-tree="$HOME"'
 alias dotcom='dotfiles commit -am'
-alias dotpush='dotfiles push -u origin arch-laptop'
+alias dotpush='dotfiles push'
 
 #######################################################
 # SPECIAL FUNCTIONS
