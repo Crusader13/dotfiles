@@ -1,0 +1,13 @@
+[font]
+normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
+bold = { family = "JetBrainsMonoNerdFont", style = "Bold" }
+italic = { family = "JetBrainsMonoNerdFont", style = "Italic" }
+bold_italic = { family = "JetBrainsMonoNerdFont", style = "BoldItalic" }
+size = 12
+
+[keyboard]
+bindings = [
+    { key = "n", mods = "Control | Shift", action = "CreateNewWindow" },
+    { key = "q", mods = "Control | Shift", action = "Quit" },
+]
+
