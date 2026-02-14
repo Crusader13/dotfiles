@@ -1,13 +1,20 @@
+general.import = [
+  # uncomment the flavour you want below:
+  #"~/.config/alacritty/catppuccin-latte.toml"
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
 [font]
 normal = { family = "JetBrainsMonoNerdFont", style = "Regular" }
 bold = { family = "JetBrainsMonoNerdFont", style = "Bold" }
 italic = { family = "JetBrainsMonoNerdFont", style = "Italic" }
 bold_italic = { family = "JetBrainsMonoNerdFont", style = "BoldItalic" }
-size = 12
 
-[keyboard]
-bindings = [
-    { key = "n", mods = "Control | Shift", action = "CreateNewWindow" },
-    { key = "q", mods = "Control | Shift", action = "Quit" },
-]
+size = 13
+
+[colors.primary]
+foreground = "#d8d8d8"
+background = "#181818"
 

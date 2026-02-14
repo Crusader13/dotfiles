@@ -15,12 +15,6 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 	. /usr/share/bash-completion/bash_completion
 elif [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
-elif [ -f /usr/share/bash-complete-alias/complete_alias ]; then
-    . /usr/share/bash-complete-alias/complete_alias
-elif [ -f /etc/bash_completion.d/android ]; then
-    . /etc/bash_completion.d/android
-elif [ -f /etc/bash_completion.d/repo ]; then
-    . /etc/bash_completion.d/repo
 fi
 
 #######################################################
@@ -57,6 +51,10 @@ if [[ $iatest -gt 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 # Set the default editor
 export EDITOR=nvim
 export VISUAL=nvim
+alias pico='edit'
+alias spico='sedit'
+alias nano='edit'
+alias snano='sedit'
 alias vim='nvim'
 
 # Replace batcat with cat on Fedora as batcat is not available as a RPM in any form
@@ -110,7 +108,6 @@ alias web='cd /var/www/html'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-alias x11vnc='x11vnc -rfbauth ~/.vnc/passwd'
 
 # Edit this .bashrc file
 alias ebrc='edit ~/.bashrc'
@@ -167,6 +164,9 @@ alias labc='ls -lap'              #alphabetical sort
 alias lf="ls -l | egrep -v '^d'"  # files only
 alias ldir="ls -l | egrep '^d'"   # directories only
 
+# alias for grep
+alias grep='grep --color=auto'
+
 # alias chmod commands
 alias mx='chmod a+x'
 alias 000='chmod -R 000'
@@ -217,17 +217,19 @@ alias ungz='tar -xvzf'
 # Show all logs in /var/log
 alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | xargs tail -f"
 
+# i3 config alias
+alias i3conf='nvim ~/.config/i3/config'
+
 # SHA1
 alias sha1='openssl sha1'
 
 alias clickpaste='sleep 3; xdotool type "$(xclip -o -selection clipboard)"'
 
 # KITTY - alias to be able to use kitty features when connecting to remote servers(e.g use tmux on remote server)
-
 alias kssh="kitty +kitten ssh"
 
 # Alias gitlab dotfiles
-alias dotfiles='/usr/bin/git --git-dir="$HOME/GitHub/.dotfiles/" --work-tree="$HOME"'
+alias dotfiles='/usr/bin/git --git-dir="$HOME/GitHub/.dotfiles" --work-tree="$HOME"'
 alias dotcom='dotfiles commit -am'
 alias dotpush='dotfiles push'
 
@@ -715,7 +717,11 @@ alias lookingglass="~/looking-glass-B5.0.1/client/build/looking-glass-client -F"
 # Set the ultimate amazing command prompt
 #######################################################
 
+alias hug="hugo server -F --bind=10.0.0.210 --baseURL=http://10.0.0.210"
+
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
+
+# Install Starship - curl -sS https://starship.rs/install.sh | sh
 
 eval "$(starship init bash)"
 
@@ -729,8 +735,13 @@ if [ -f "/usr/share/autojump/autojump.sh" ]; then
 elif [ -f "/usr/share/autojump/autojump.bash" ]; then
 	. /usr/share/autojump/autojump.bash
 else
-	echo "can't find the autojump script"
+	echo "can't found the autojump script"
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export LIBVA_DRIVER_NAME=nvidia
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export NVD_BACKEND=direct
+export MOZ_DISABLE_RDD_SANDBOX=1
 
