@@ -740,8 +740,3 @@ fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-export LIBVA_DRIVER_NAME=nvidia
-export __GLX_VENDOR_LIBRARY_NAME=nvidia
-export NVD_BACKEND=direct
-export MOZ_DISABLE_RDD_SANDBOX=1
-
