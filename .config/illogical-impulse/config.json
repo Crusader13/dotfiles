@@ -80,7 +80,7 @@
             "workspaceZoom": 1
         },
         "thumbnailPath": "",
-        "wallpaperPath": "/home/Thomas/Pictures/Wallpapers/hoshimi-miyabi-dope-3840x2160-20500.jpg",
+        "wallpaperPath": "/home/Thomas/.config/quickshell/ii/assets/images/default_wallpaper.png",
         "widgets": {
             "clock": {
                 "cookie": {
@@ -195,7 +195,6 @@
         }
     },
     "battery": {
-        "enable": false,
         "automaticSuspend": false,
         "critical": 5,
         "full": 101,
@@ -270,8 +269,8 @@
             "enable": false
         },
         "night": {
-            "automatic": true,
-            "colorTemperature": 4573,
+            "automatic": false,
+            "colorTemperature": 1200,
             "from": "00:00",
             "to": "23:59"
         }
