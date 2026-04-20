@@ -590,6 +590,16 @@ trim() {
 	var="${var%"${var##*[![:space:]]}"}" # remove trailing whitespace characters
 	echo -n "$var"
 }
+
+# Printer Functions
+printpage() {
+    lp -o media=A4 -o resolution=1200dpi -o sides=two-sided-short-edge -d Brother_MFC-L2710DN_series $1
+}
+
+print2page() {
+    lp -o media=A4 -o resolution=1200dpi -o sides=two-sided-short-edge -o number-up=2 -d Brother_MFC-L2710DN_series $1
+}
+
 # GitHub Titus Additions
 
 gcom() {
