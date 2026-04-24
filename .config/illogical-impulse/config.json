@@ -58,8 +58,8 @@
     "network": "kcmshell6 kcm_networkmanagement",
     "networkEthernet": "kcmshell6 kcm_networkmanagement",
     "taskManager": "plasma-systemmonitor --page-name Processes",
-    "terminal": "kitty -1",
-    "update": "kitty -1 --hold=yes fish -i -c 'pkexec pacman -Syu'",
+    "terminal": "alacritty",
+    "update": "alacritty --hold=yes fish -i -c 'pkexec pacman -Syu'",
     "volumeMixer": "~/.config/hypr/hyprland/scripts/launch_first_available.sh \"pavucontrol-qt\" \"pavucontrol\""
   },
   "audio": {
@@ -151,7 +151,7 @@
     },
     "resources": {
       "alwaysShowCpu": true,
-      "alwaysShowSwap": true,
+      "alwaysShowSwap": false,
       "cpuWarningThreshold": 90,
       "memoryWarningThreshold": 95,
       "swapWarningThreshold": 85
