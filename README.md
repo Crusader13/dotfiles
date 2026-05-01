@@ -29,7 +29,15 @@ yay -S --needed xdg-desktop-portal-hyprland grim slurp cava pavucontrol-qt playe
 ```
 Extra qt dependencies:
 
+Use kvantum-manager to set the qt5/qt6 theme. Environment variable: ```QT_QPA_PLATFORMTHEME = qt5ct```
+
 ```
-yay -S --needed qt6-base qt6-declarative qt6-5compat qt6-avif-image-plugin qt6-imageformats qt6-multimedia qt6-positioning qt6-quicktimeline qt6-sensors qt6-svg qt6-tools qt6-translations qt6-virtualkeyboard qt6-wayland kirigami kdialog syntax-highlighting vulkan-headers libdrm cpptrace jemalloc
+yay -S --needed qt6-base qt6-declarative qt6-5compat qt6-avif-image-plugin qt6-imageformats qt6-multimedia qt6-positioning qt6-quicktimeline qt6-sensors qt6-svg qt6-tools qt6-translations qt6-virtualkeyboard qt6-wayland kirigami kdialog syntax-highlighting vulkan-headers libdrm cpptrace jemalloc qt5ct qt6ct kvantum
+```
+
+### Printer support:
+
+```
+yay -S brother-mfc-l2710dn
 ```
 
