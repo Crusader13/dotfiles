@@ -67,7 +67,7 @@ hl.config({
         enabled = true,
     },
     input = {
-        kb_layout = "de",
+        kb_layout = "us",
         sensitivity = 0.0,
         numlock_by_default = true,
         accel_profile = "flat",
@@ -86,7 +86,6 @@ hl.config({
         animate_manual_resizes = false,
         animate_mouse_windowdragging = false,
         enable_swallow = false,
-        swallow_regex = "(alacritty|Alacritty)",
         on_focus_under_fullscreen = 2,
         allow_session_lock_restore = true,
         session_lock_xray = true,

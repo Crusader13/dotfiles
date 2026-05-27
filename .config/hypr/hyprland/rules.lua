@@ -36,11 +36,18 @@ hl.window_rule({ match = { title = ".*Shell conflicts.*" }, float = true })
 
 hl.window_rule({ match = { class = "org.freedesktop.impl.portal.desktop.kde" }, float = true, size = "(monitor_w*.60) (monitor_h*.65)" })
 hl.window_rule({ match = { class = "^(Zotero)$" }, float = true, size = "(monitor_w*.45) (monitor_h*.45)" })
-hl.window_rule({ match = { class = "steam_app_default" }, float = true })
+
+
+hl.window_rule({ match = { class = "steam_app_default" }, float = true, immediate = true })
+hl.window_rule({ match = { class = "moe.launcher.sleepy-launcher" }, monitor = "DP-1" })
 
 -- Positionierungs- & Move-Regeln
 hl.window_rule({ match = { class = "^(plasma-changeicons)$" }, float = true, no_initial_focus = true, move = "999999 999999" })
 hl.window_rule({ match = { title = "^(Copying — Dolphin)$" }, move = "40 80" })
+
+hl.window_rule({ match = { class= "moe.launcher.sleepy-launcher" }, monitor = "HDMI-A-2 silent" })
+hl.window_rule({ match = { class= "steam" }, monitor = "HDMI-A-2 silent" })
+hl.window_rule({ match = { class= "discord" }, monitor = "HDMI-A-1 silent" })
 
 -- Tiling erzwingen
 hl.window_rule({ match = { class = "^dev\\.warp\\.Warp$" }, tile = true })
