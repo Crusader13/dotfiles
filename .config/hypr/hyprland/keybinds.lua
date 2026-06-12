@@ -127,7 +127,7 @@ end
 
 for i = 1, 10 do
     hl.bind("SUPER + SHIFT + " .. (i % 10), function()
-        hl.dispatch(hl.dsp.window.move({ workspace = workspace_in_group(i), follow = false }))
+        hl.dispatch(hl.dsp.window.move({ window = "activewindow", workspace = i, follow = false }))
     end, { description = "Window: Send to workspace " .. i })
 end
 

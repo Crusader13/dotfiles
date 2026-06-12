@@ -67,7 +67,8 @@ hl.config({
         enabled = true,
     },
     input = {
-        kb_layout = "us",
+        kb_layout = "de",
+        kb_variant = "nodeadkeys",
         sensitivity = 0.0,
         numlock_by_default = true,
         accel_profile = "flat",

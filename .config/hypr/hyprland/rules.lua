@@ -38,7 +38,6 @@ hl.window_rule({ match = { class = "org.freedesktop.impl.portal.desktop.kde" }, 
 hl.window_rule({ match = { class = "^(Zotero)$" }, float = true, size = "(monitor_w*.45) (monitor_h*.45)" })
 
 
-hl.window_rule({ match = { class = "steam_app_default" }, float = true, immediate = true })
 hl.window_rule({ match = { class = "moe.launcher.sleepy-launcher" }, monitor = "DP-1" })
 
 -- Positionierungs- & Move-Regeln
@@ -65,7 +64,7 @@ hl.window_rule({
 -- Tearing (Immediate Mode)
 hl.window_rule({ match = { title = ".*\\.exe" }, immediate = true })
 hl.window_rule({ match = { title = ".*minecraft.*" }, immediate = true })
-hl.window_rule({ match = { class = "^(steam_app).*" }, immediate = true })
+hl.window_rule({ match = { class = "^(steam_app).*" }, immediate = true, float = true, monitor = "HDMI-A-2 silent" })
 
 -- Jetbrains IDE Focus Fix
 hl.window_rule({ match = { class = "^jetbrains-.*$", float = true, title = "^$|\\s$|^win\\d+$" }, no_initial_focus = true })
