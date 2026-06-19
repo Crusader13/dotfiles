@@ -202,7 +202,7 @@
         "suspend": 3
     },
     "calendar": {
-        "locale": "en-GB"
+        "locale": "de-DE"
     },
     "cheatsheet": {
         "fontSize": {
@@ -466,8 +466,8 @@
         "theme": "freedesktop"
     },
     "time": {
-        "dateFormat": "ddd, dd/MM",
-        "dateWithYearFormat": "dd/MM/yyyy",
+        "dateFormat": "ddd, dd.MM",
+        "dateWithYearFormat": "dd.MM.yyyy",
         "format": "hh:mm",
         "pomodoro": {
             "breakTime": 300,
@@ -476,7 +476,7 @@
             "longBreak": 900
         },
         "secondPrecision": false,
-        "shortDateFormat": "dd/MM"
+        "shortDateFormat": "dd.MM"
     },
     "tray": {
         "filterPassive": true,
