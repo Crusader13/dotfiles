@@ -1,14 +1,20 @@
--- Holt das Home-Verzeichnis für dynamische Pfade (da $HOME / ~ in Lua-Strings nicht automatisch expandiert wird)
-local home = os.getenv("HOME")
+local home_dir = os.getenv("HOME")
 
-hl.env("XDG_DATA_DIRS", home .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share")
-hl.env("ILLOGICAL_IMPULSE_VIRTUAL_ENV", home .. "/.local/state/quickshell/.venv")
-hl.env("XDG_CONFIG_HOME", home .. "/.config")
-hl.env("XDG_CACHE_HOME", home .. "/.cache")
-hl.env("XDG_SCREENSHOTS_DIR", home .. "/Pictures/Screenshots")
+-- Wayland
+hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
+
+-- Applications
+local xdg_data_dirs_old = os.getenv("XDG_DATA_DIRS") or ""
+hl.env("XDG_DATA_DIRS", home_dir .. "/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:" .. xdg_data_dirs_old)
+
+-- Themes
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")
-hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
-hl.env("XDG_MENU_PREFIX", "kde-")
+hl.env("QT_QPA_PLATFORMTHEME", "kde")
+hl.env("XDG_MENU_PREFIX", "plasma-")
+
+-- Virtual environment
+hl.env("ILLOGICAL_IMPULSE_VIRTUAL_ENV", home_dir .. "/.local/state/quickshell/.venv")
+
 hl.env("EDITOR", "nvim")
 hl.env("TERMINAL", "alacritty")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
