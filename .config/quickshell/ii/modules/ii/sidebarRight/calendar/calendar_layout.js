@@ -27,7 +27,8 @@ function getNextMonthDays(month, year) {
     if (month == 1 && leapYear) return 29;
     if (month == 1 && !leapYear) return 28;
     if (month == 12) return 31;
-    if ((month <= 7 && month % 2 == 1) || (month >= 8 && month % 2 == 0)) return 30;
+    // if ((month <= 7 && month % 2 == 1) || (month >= 8 && month % 2 == 0)) return 30;
+    if ((month <= 6 && month % 2 == 1) || (month >= 7 && month % 2 == 0)) return 30;
     return 31;
 }
 
@@ -36,7 +37,8 @@ function getPrevMonthDays(month, year) {
     if (month == 3 && leapYear) return 29;
     if (month == 3 && !leapYear) return 28;
     if (month == 1) return 31;
-    if ((month <= 7 && month % 2 == 1) || (month >= 8 && month % 2 == 0)) return 30;
+    // if ((month <= 7 && month % 2 == 1) || (month >= 8 && month % 2 == 0)) return 30;
+    if ((month <= 8 && month % 2 == 1) || (month >= 9 && month % 2 == 0)) return 30;
     return 31;
 }
 

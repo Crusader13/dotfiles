@@ -85,25 +85,25 @@ Item {
     implicitHeight: root.vertical ? (root.workspaceButtonWidth * root.workspacesShown) : Appearance.sizes.barHeight
 
     // Scroll to switch workspaces
-    WheelHandler {
-        onWheel: (event) => {
-            if (event.angleDelta.y < 0)
-                Hyprland.dispatch(`hl.dsp.focus({workspace = "r+1"})`);
-            else if (event.angleDelta.y > 0)
-                Hyprland.dispatch(`hl.dsp.focus({workspace = "r-1"})`);
-        }
-        acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
-    }
+    // WheelHandler {
+    //     onWheel: (event) => {
+    //         if (event.angleDelta.y < 0)
+    //             Hyprland.dispatch(`workspace r+1`);
+    //         else if (event.angleDelta.y > 0)
+    //             Hyprland.dispatch(`workspace r-1`);
+    //     }
+    //     acceptedDevices: PointerDevice.Mouse | PointerDevice.TouchPad
+    // }
 
-    MouseArea {
-        anchors.fill: parent
-        acceptedButtons: Qt.BackButton
-        onPressed: (event) => {
-            if (event.button === Qt.BackButton) {
-                Hyprland.dispatch(`hl.dsp.workspace.toggle_special("special")`);
-            } 
-        }
-    }
+    // MouseArea {
+    //     anchors.fill: parent
+    //     acceptedButtons: Qt.BackButton
+    //     onPressed: (event) => {
+    //         if (event.button === Qt.BackButton) {
+    //             Hyprland.dispatch(`togglespecialworkspace`);
+    //         } 
+    //     }
+    // }
 
     // Workspaces - background
     Grid {
@@ -199,9 +199,9 @@ Item {
                 property int workspaceValue: workspaceGroup * root.workspacesShown + index + 1
                 implicitHeight: vertical ? Appearance.sizes.verticalBarWidth : Appearance.sizes.barHeight
                 implicitWidth: vertical ? Appearance.sizes.verticalBarWidth : Appearance.sizes.verticalBarWidth
-                onPressed: Hyprland.dispatch(`hl.dsp.focus({ workspace = ${workspaceValue}})`)
-                width: vertical ? undefined : root.workspaceButtonWidth
-                height: vertical ? root.workspaceButtonWidth : undefined
+                onPressed: Hyprland.dispatch(`hl.dsp.focus({ workspace = ${workspaceValue} })`)
+                width: vertical ? undefined : workspaceButtonWidth
+                height: vertical ? workspaceButtonWidth : undefined
 
                 background: Item {
                     id: workspaceButtonBackground
